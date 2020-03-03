@@ -1,8 +1,8 @@
-ARG HUMHUB_VERSION=1.3.20
+ARG HUMHUB_VERSION=1.4.1
 
-FROM composer:1.9.2 as builder-composer
+FROM composer:1.9.3 as builder-composer
 
-FROM alpine:3.11 as builder
+FROM alpine:3.11.3 as builder
 
 ARG HUMHUB_VERSION
 
@@ -59,7 +59,7 @@ RUN grunt build-assets
 
 RUN rm -rf ./node_modules
 
-FROM alpine:3.11
+FROM alpine:3.11.3
 
 ARG HUMHUB_VERSION
 
